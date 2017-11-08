@@ -1,0 +1,23 @@
+#define doo  1000// do komutu ile karismasin diye doo yazdim (kalin do)
+#define re   1122
+#define mi   1260
+#define fa   1335
+#define sol  1498
+#define la   1681
+#define si   1887
+#define dom  2000// do komutu ile karismasin diye dom yazdim (ince do)
+
+int melodi[] =     {mi,si, si,si,la,si, dom, si,mi,si, si,si,la,si, dom, si, dom,la,si,sol, dom,si,la,la, dom,si,la,la, si,sol,fa,mi,la, la,sol,la,fa ,mi,sol,fa,mi};
+int notasuresi[] = {3,  3,  8,  2, 3,  3, 8,  2, 3,  3,  8,  2, 3,  3, 8,  2,  3, 3, 3,3,3,3,7,2, 3,3,7,3 ,3,3,5,5,3 ,3,3,7,3  ,3,3,6,6 };// her notanin süresini array yaptim
+int tempo = 1250;
+void setup() 
+{ 
+  for (int Nota = 0; Nota <41; Nota++) 
+    {
+      int sure = tempo/notasuresi[Nota];
+     tone(9, melodi[Nota],sure);// 9 numarali bacaktan notalarin frekanslarini nota uzunluklarina göre gönder
+     delay(sure*1.2);// notalar arasinda biraz beklesin. Eger 1 ile çarparsaniz notalar birbirine bitisik olur
+    }
+ }
+void loop() {
+ }
